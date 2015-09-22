@@ -1,4 +1,4 @@
-package jetty;
+package de.mb.filzobjekt.jetty;
 
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
