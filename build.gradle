@@ -1,0 +1,39 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'war'
+
+version = '0.1'
+archivesBaseName = "${project.name}"
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+configurations {
+	provided
+	compile.extendsFrom provided
+}
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
+dependencies {
+	compile 'javax.servlet:javax.servlet-api:3.1.0'
+	
+	provided 'org.eclipse.jetty.aggregate:jetty-all:9.0.6.v20130930'
+
+}
+
+tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
+
+task hello {
+	doFirst {
+		println "Hello world\n\tRunning Task: ${it.name}" +
+				"\n\tGradle Version: $gradle.gradleVersion"
+	}
+}
+
+task sourceJar(type: Jar) {
+	classifier = 'sources'
+	from sourceSets.main.allJava
+}
