@@ -18,10 +18,12 @@ repositories {
 }
 
 dependencies {
-	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-	
-	providedRuntime 'org.eclipse.jetty.aggregate:jetty-all:9.0.6.v20130930'
+	compile 'org.thymeleaf:thymeleaf:2.1.4.RELEASE',
+			'org.springframework:spring-webmvc:[3.2,4)'
 
+	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+
+	providedRuntime 'org.eclipse.jetty.aggregate:jetty-all:9.0.6.v20130930'
 }
 
 tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }

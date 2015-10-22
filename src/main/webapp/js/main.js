@@ -43,7 +43,7 @@ function NavModel() {
 	var self = this;
 	self.render = function () {
 		self.home_button = $('button[name=home]').button().click(function () {
-			console.log("this is a test");
+			self.loadHome();
 		});
 
 		self.shoes_button = $('button[name=shoes]').button().click(function () {
@@ -69,4 +69,15 @@ function NavModel() {
 		self.impressum_button=$('button[name=impressum]').button();
 		self.kontakt_button=$('button[name=kontakt]').button();
 	};
+	self.loadHome = function(){
+		loadTemplate({
+			url: "/home.html"
+		});
+	}
 }
+	function loadTemplate(conf){
+		$.ajax({
+			url : ""
+		});
+
+	}

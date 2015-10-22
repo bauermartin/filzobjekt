@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Filzobjekt</title>
@@ -48,7 +48,7 @@
 		</ul>
 	</div>
 	<div class="filzpage floatleft">
-		<div class="home">
+		<div th:include=":home" class="home">
 			<div class="welcome">
 				<div class="welcome_head">
 					<span>
@@ -64,11 +64,15 @@
 			</div>
 			<div class="news">
 				<div class="news_head">
+					<span>
 					Neuigkeiten und Ankündigungen:
+					</span>
 				</div>
 				<div class="news_text">
+					<span>
 					Die neue Homepage ist da!!!<br><br>
 					Wer hats schon bemerkt!?
+					</span>
 				</div>
 			</div>
 		</div>
