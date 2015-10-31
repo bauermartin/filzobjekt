@@ -24,31 +24,45 @@
 	<div class="mainpage">
 		<div class="navigation floatleft">
 			<ul>
-				<li>
-					<a th:href="home"><button name="home" class="filz_button">Home</button></a>
+				<li><a th:href="home"><button name="home"
+							class="filz_button">Home</button></a></li>
+				<li><a th:href="shoes"><button name="shoes"
+							class="filz_button">Schuhe</button></a></li>
+				<li><a th:href="handbag">
+					<button name="handbag" class="filz_button">Taschen</button></a>
 				</li>
-				<li>
-					<a th:href="shoes"><button name="shoes" class="filz_button">Schuhe</button></a>
+				<li><a th:href="object">
+					<button name="object" class="filz_button">Objekte</button></a>
 				</li>
-				<li>
-					<button name="handbag" class="filz_button">Taschen</button>
+				<li><a th:href="seat_pad">
+					<button name="seat_pad" class="filz_button">Kissen</button></a>
 				</li>
-				<li>
-					<button name="object" class="filz_button">Objekte</button>
-				</li>
-				<li>
-					<button name="seat_pad" class="filz_button">Kissen</button>
-				</li>
-				<li>
-					<button name="scarf" class="filz_button">Schals</button>
+				<li><a th:href="scarf">
+					<button name="scarf" class="filz_button">Schals</button></a>
 				</li>
 			</ul>
 		</div>
+		<div th:text="#{test.me}"></div>
 		<div class="filzpage floatleft">
-		<div th:if="${ishome}">
-			<div th:replace="home ::home"></div>
-			<div th:replace="home ::news"></div>
+			<div th:if="${template} == 'home'">
+				<div th:replace="home ::home"></div>
+				<div th:replace="home ::news"></div>
+			</div>
+			<div th:if="${template} == 'shoes'">
+				<div>Schuhe</div>
+			</div>
+			<div th:if="${template} == 'handbag'">
+				<div th:text="${test.me}">Handtasche</div>
+			</div>
+			<div th:if="${template} == 'object'">
+				<div>Objekte</div>
+			</div>
+			<div th:if="${template} == 'seat_pad'">
+				<div>Sitzkissen</div>
+			</div>
 		</div>
+		<div th:if="${template} == 'scarf'">
+			<div>Schal</div>
 		</div>
 	</div>
 </body>

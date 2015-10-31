@@ -27,7 +27,11 @@
 				</bean>
 			</set>
 		</property>
+		<property name="messageSource" ref="messageSource"></property>
 	</bean>
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <property name="basename" value="Messages" />
+  </bean>
 	<bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
 		<property name="templateEngine" ref="templateEngine" />
 	</bean>
