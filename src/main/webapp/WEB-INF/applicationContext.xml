@@ -32,6 +32,7 @@
 					<property name="prefix" value="/" />
 					<property name="suffix" value=".html" />
 					<property name="templateMode" value="HTML5" />
+					<property name="cacheable" value="false" />
 				</bean>
 			</set>
 		</property>

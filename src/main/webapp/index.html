@@ -3,64 +3,101 @@
 <head>
 <meta charset="UTF-8"></meta>
 <title>Filzobjekt</title>
-<link rel="stylesheet" type="text/css" href="css/ext/jquery-ui.css"></link>
+<link rel="stylesheet" type="text/css" href="css/ext/bootstrap.css"></link>
 <link rel="stylesheet" type="text/css"
-	href="css/ext/jquery-ui.structure.css"></link>
-<link rel="stylesheet" type="text/css"
-	href="css/ext/jquery-ui.theme.css"></link>
+	href="css/ext/bootstrap-theme.css"></link>
 <link rel="stylesheet" type="text/css" href="css/style.css"></link>
 <script type="text/javascript" src="js/ext/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="js/ext/jquery-ui.js"></script>
+<script type="text/javascript" src="js/ext/bootstrap.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body onload="de.filzobjekt.render()">
-	<div class="headline">Filzobjekt</div>
-	<div class="headnav">
-		<button name="gabi" class="headnav_button headnav_left">Gabi
-			Bauer</button>
-		<button name="impressum" class="headnav_button headnav_middle">Impressum</button>
-		<button name="kontakt" class="headnav_button headnav_right">Kontakt</button>
+	<div class="container">
+		<div class="headline">Filzobjekt</div>
 	</div>
-	<div class="mainpage">
-		<div class="navigation floatleft">
-			<ul>
-				<li><a th:href="home"><button name="home"
-							class="filz_button" th:text="#{button.home}">Home</button></a></li>
-				<li><a th:href="shoes"><button name="shoes"
-							class="filz_button" th:text="#{button.shoes}">Schuhe</button></a></li>
-				<li><a th:href="handbag">
-					<button name="handbag" class="filz_button" th:text="#{button.handbag}">Taschen</button></a>
-				</li>
-				<li><a th:href="object">
-					<button name="object" class="filz_button" th:text="#{button.object}">Objekte</button></a>
-				</li>
-				<li><a th:href="seat_pad">
-					<button name="seat_pad" class="filz_button" th:text="#{button.seat_pad}">Kissen</button></a>
-				</li>
-				<li><a th:href="scarf">
-					<button name="scarf" class="filz_button" th:text="#{button.scarf}">Schals</button></a>
-				</li>
-			</ul>
-		</div>
-		<div class="filzpage floatleft">
-			<div th:if="${template} == 'home'">
-				<div th:replace="home ::home"></div>
-				<div th:replace="home ::news"></div>
+	<div class="container">
+		<nav id="filznav" class="navbar navbar-standard " role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-menubuilder">
+						<span class="sr-only">Toggle navigation</span><span
+							class="icon-bar"></span><span class="icon-bar"></span><span
+							class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse navbar-menubuilder">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">Gabi</a></li>
+						<li><a href="#">Bestellung</a></li>
+						<li><a href="#">Kontakt</a></li>
+						<li><a href="#">Impressum</a></li>
+					</ul>
+				</div>
 			</div>
-			<div th:if="${template} == 'shoes'">
-				<div>Schuhe</div>
+		</nav>
+	</div>
+	<div class="container">
+		<div class="row mainpage">
+			<div class="col-xs-2">
+				<nav class="navigation navbar floatleft" role="navigation">
+
+					<ul>
+						<li><a th:href="home">
+								<button name="home" class="btn btn-default filz_button"
+									th:text="#{button.home}"
+									th:classappend="${template}== 'home' ? active : ''">Home</button>
+						</a></li>
+						<li><a th:href="shoes">
+								<button name="shoes" class="btn btn-default filz_button"
+									th:text="#{button.shoes}"
+									th:classappend="${template}== 'shoes' ? active : ''">Schuhe</button>
+						</a></li>
+						<li><a th:href="handbag">
+								<button name="handbag" class="btn btn-default filz_button"
+									th:text="#{button.handbag}"
+									th:classappend="${template}== 'handbag' ? active : ''">Taschen</button>
+						</a></li>
+						<li><a th:href="object">
+								<button name="object" class="btn btn-default filz_button"
+									th:text="#{button.object}"
+									th:classappend="${template}== 'object' ? active : ''">Objekte</button>
+						</a></li>
+						<li><a th:href="seat_pad">
+								<button name="seat_pad" class="btn btn-default filz_button"
+									th:text="#{button.seat_pad}"
+									th:classappend="${template}== 'seat_pad' ? active : ''">Kissen</button>
+						</a></li>
+						<li><a th:href="scarf">
+								<button name="scarf" class="btn btn-default filz_button"
+									th:text="#{button.scarf}"
+									th:classappend="${template}== 'scarf' ? active : ''">Schals</button>
+						</a></li>
+					</ul>
+				</nav>
 			</div>
-			<div th:if="${template} == 'handbag'">
-				<div>Handtasche</div>
-			</div>
-			<div th:if="${template} == 'object'">
-				<div>Objekte</div>
-			</div>
-			<div th:if="${template} == 'seat_pad'">
-				<div>Sitzkissen</div>
-			</div>
-			<div th:if="${template} == 'scarf'">
-				<div>Schal</div>
+			<div class="col-xs-10">
+				<div class="filzpage floatleft">
+					<div th:if="${template} == 'home'">
+						<div th:replace="home ::home"></div>
+						<div th:replace="home ::news"></div>
+					</div>
+					<div th:if="${template} == 'shoes'">
+						<div>Schuhe</div>
+					</div>
+					<div th:if="${template} == 'handbag'">
+						<div>Handtasche</div>
+					</div>
+					<div th:if="${template} == 'object'">
+						<div>Objekte</div>
+					</div>
+					<div th:if="${template} == 'seat_pad'">
+						<div>Sitzkissen</div>
+					</div>
+					<div th:if="${template} == 'scarf'">
+						<div>Schal</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
