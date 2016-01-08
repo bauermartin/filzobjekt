@@ -1,10 +1,8 @@
 package de.mb.filzobjekt.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import de.mb.filzobject.repository.IRepositoryService;
 
 /**
  * Servlet implementation class Master
@@ -29,8 +27,11 @@ public class ViewController {
 	}
 
 	@RequestMapping("/")
-	private static String index() {
-		return "index";
+	private static ModelAndView index() {
+		final ModelAndView mv = new ModelAndView();
+		mv.setViewName("index");
+		mv.addObject("template", "home");
+		return mv;
 	}
 
 	@RequestMapping(value = "/object")
@@ -49,11 +50,11 @@ public class ViewController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/seat_pat")
-	private static ModelAndView seat_pat() {
+	@RequestMapping(value = "/seat_pad")
+	private static ModelAndView seat_pad() {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
-		mv.addObject("template", "seat_pat");
+		mv.addObject("template", "seat_pad");
 		return mv;
 	}
 

@@ -25,24 +25,23 @@
 		<div class="navigation floatleft">
 			<ul>
 				<li><a th:href="home"><button name="home"
-							class="filz_button">Home</button></a></li>
+							class="filz_button" th:text="#{button.home}">Home</button></a></li>
 				<li><a th:href="shoes"><button name="shoes"
-							class="filz_button">Schuhe</button></a></li>
+							class="filz_button" th:text="#{button.shoes}">Schuhe</button></a></li>
 				<li><a th:href="handbag">
-					<button name="handbag" class="filz_button">Taschen</button></a>
+					<button name="handbag" class="filz_button" th:text="#{button.handbag}">Taschen</button></a>
 				</li>
 				<li><a th:href="object">
-					<button name="object" class="filz_button">Objekte</button></a>
+					<button name="object" class="filz_button" th:text="#{button.object}">Objekte</button></a>
 				</li>
 				<li><a th:href="seat_pad">
-					<button name="seat_pad" class="filz_button">Kissen</button></a>
+					<button name="seat_pad" class="filz_button" th:text="#{button.seat_pad}">Kissen</button></a>
 				</li>
 				<li><a th:href="scarf">
-					<button name="scarf" class="filz_button">Schals</button></a>
+					<button name="scarf" class="filz_button" th:text="#{button.scarf}">Schals</button></a>
 				</li>
 			</ul>
 		</div>
-		<div th:text="#{test.me}"></div>
 		<div class="filzpage floatleft">
 			<div th:if="${template} == 'home'">
 				<div th:replace="home ::home"></div>
@@ -52,7 +51,7 @@
 				<div>Schuhe</div>
 			</div>
 			<div th:if="${template} == 'handbag'">
-				<div th:text="${test.me}">Handtasche</div>
+				<div>Handtasche</div>
 			</div>
 			<div th:if="${template} == 'object'">
 				<div>Objekte</div>
@@ -60,9 +59,9 @@
 			<div th:if="${template} == 'seat_pad'">
 				<div>Sitzkissen</div>
 			</div>
-		</div>
-		<div th:if="${template} == 'scarf'">
-			<div>Schal</div>
+			<div th:if="${template} == 'scarf'">
+				<div>Schal</div>
+			</div>
 		</div>
 	</div>
 </body>

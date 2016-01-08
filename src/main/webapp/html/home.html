@@ -2,23 +2,31 @@
 <html xmlns:th="www.thymeleaf.org">
 <div th:fragment="home" class="home">
 	<div class="welcome">
-		<div class="welcome_head">
-			<span> Willkommen zur Filzobjekt Homepage! </span>
+		<div id="welcome_head" class="text_dialog">
+			<div class="welcome_head">
+				<span> Willkommen zur Filzobjekt Homepage! </span>
+			</div>
 		</div>
-		<div class="welcome_text">
+		<div id="welcome_text" class="text_dialog">
+			<div class="welcome_text">
 			<span> Ich wünschen Ihnen viel Spaß und hoffe Ihnen gefällt
 				Ihr kleiner Ausflug in die Welt von Filz und Textil. </span>
+			</div>
 		</div>
 	</div>
 </div>
 <div th:fragment="news" class="news">
-	<div class="news_head">
-		<span> Neuigkeiten und Ankündigungen: </span>
+	<div id="news_head" class="text_dialog">
+		<div class="news_head">
+			<span> Neuigkeiten und Ankündigungen: </span>
+		</div>
 	</div>
-	<div class="news_text">
-		<span> Die neue Homepage ist da!!!<br /> <br /> Wer hats
+	<div id="news_text" class="text_dialog">
+		<div class="news_text">
+		<span> Die neue Homepage ist da!!!<br/> <br/> Wer hats
 			schon bemerkt!?
 		</span>
+		</div>
 	</div>
 </div>
 </html>
