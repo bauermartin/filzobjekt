@@ -10,6 +10,7 @@
 	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/ckeditor/" mapping="/ckeditor/**" />
 	<context:component-scan base-package="de.mb.filzobjekt" />
 	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"></bean>
 	<mvc:annotation-driven>

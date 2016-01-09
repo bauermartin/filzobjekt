@@ -8,6 +8,7 @@
 	href="css/ext/bootstrap-theme.css"></link>
 <link rel="stylesheet" type="text/css" href="css/style.css"></link>
 <script type="text/javascript" src="js/ext/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="js/ext/bootstrap.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 </head>
@@ -120,15 +121,20 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="close" id="dialog_close1"
+						data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title" id="myModalLabel">Text änderung</h4>
 				</div>
-				<div class="modal-body" id="modalContent"></div>
+				<div class="modal-body">
+					<textarea name="editor" id="editor" rows="10" cols="80">
+                
+            </textarea>
+				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-default" id="dialog_close2"
+						data-dismiss="modal">Close</button>
 					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
