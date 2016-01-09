@@ -44,9 +44,11 @@ function MainModel() {
 	};
 	self.render = function() {
 		$('.text_dialog').click(function() {
-			var self = $(this);
-			console.log(self.attr('id'));
-			renderDialog(self);
+			// var self = $(this);
+			// console.log(self.attr('id'));
+			// renderDialog(self);
+			$('#modalContent');
+			$('#dialog').modal('toggle');
 		});
 	};
 	function renderDialog(elem) {

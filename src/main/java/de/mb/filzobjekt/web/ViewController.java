@@ -65,4 +65,36 @@ public class ViewController {
 		mv.addObject("template", "shoes");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/gabi")
+	private static ModelAndView gabi() {
+		final ModelAndView mv = new ModelAndView();
+		mv.setViewName("index");
+		mv.addObject("template", "gabi");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/orders")
+	private static ModelAndView orders() {
+		final ModelAndView mv = new ModelAndView();
+		mv.setViewName("index");
+		mv.addObject("template", "orders");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/markets")
+	private static ModelAndView markets() {
+		final ModelAndView mv = new ModelAndView();
+		mv.setViewName("index");
+		mv.addObject("template", "markets");
+		return mv;
+	}
+	
+	@RequestMapping(value = "/impressum")
+	private static ModelAndView impressum() {
+		final ModelAndView mv = new ModelAndView();
+		mv.setViewName("index");
+		mv.addObject("template", "impressum");
+		return mv;
+	}
 }

@@ -28,18 +28,19 @@
 				</div>
 				<div class="collapse navbar-collapse navbar-menubuilder">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Gabi</a></li>
-						<li><a href="#">Bestellung</a></li>
-						<li><a href="#">Kontakt</a></li>
-						<li><a href="#">Impressum</a></li>
+						<li><a href="gabi" th:text="#{nav.gabi}">Gabi Bauer</a></li>
+						<li><a href="orders" th:text="#{nav.orders}">Bestellung</a></li>
+						<li><a href="markets" th:text="#{nav.markets}">Märkte und
+								Austellungen</a></li>
+						<li><a href="impressum" th:text="#{nav.impressum}">Impressum</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</div>
 	<div class="container">
-		<div class="row mainpage">
-			<div class="col-xs-2">
+		<div class="row mainpage visible-sm visible-md visible-lg">
+			<div class="col-sm-2 col-md-2 col-lg-2">
 				<nav class="navigation navbar floatleft" role="navigation">
 
 					<ul>
@@ -76,27 +77,59 @@
 					</ul>
 				</nav>
 			</div>
-			<div class="col-xs-10">
+			<div class="col-sm-10 col-md-10 col-lg-10">
 				<div class="filzpage floatleft">
 					<div th:if="${template} == 'home'">
 						<div th:replace="home ::home"></div>
 						<div th:replace="home ::news"></div>
 					</div>
 					<div th:if="${template} == 'shoes'">
-						<div>Schuhe</div>
+						<div th:replace="shoes :: shoes"></div>
 					</div>
 					<div th:if="${template} == 'handbag'">
-						<div>Handtasche</div>
+						<div th:replace="handbag :: handbag"></div>
 					</div>
 					<div th:if="${template} == 'object'">
-						<div>Objekte</div>
+						<div th:replace="object :: object"></div>
 					</div>
 					<div th:if="${template} == 'seat_pad'">
-						<div>Sitzkissen</div>
+						<div th:replace="seat_pad :: seat_pad"></div>
 					</div>
 					<div th:if="${template} == 'scarf'">
-						<div>Schal</div>
+						<div th:replace="scarf :: scarf"></div>
 					</div>
+					<div th:if="${template} == 'gabi'">
+						<div th:replace="gabi :: gabi"></div>
+					</div>
+					<div th:if="${template} == 'orders'">
+						<div th:replace="orders :: orders"></div>
+					</div>
+					<div th:if="${template} == 'markets'">
+						<div th:replace="markets :: markets"></div>
+					</div>
+					<div th:if="${template} == 'impressum'">
+						<div th:replace="impressum :: impressum"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="dialog" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Text änderung</h4>
+				</div>
+				<div class="modal-body" id="modalContent"></div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
 				</div>
 			</div>
 		</div>
