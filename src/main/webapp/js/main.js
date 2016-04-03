@@ -50,10 +50,10 @@ function MainModel() {
 			}
 			editor_field.text(orig_field.html());
 			editor = CKEDITOR.replace(editor_field.get(0));
-			$('#dialog').modal('toggle');
+			$('#text_dialog').modal('toggle');
 		});
 
-		$('#dialog').on('hidden.bs.modal', function(e) {
+		$('#text_dialog').on('hidden.bs.modal', function(e) {
 			if (!close_ev) {
 				orig_field.html(editor.getData());
 			}

@@ -1,1 +1,26 @@
-<div th:fragment="shoes">Schuhe viel bunte schuhe, grün blau rot gelb</div>
+<div th:fragment="shoes">
+	<div class="row mainpage visible-sm visible-md visible-lg">
+		<div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
+			<img src="images/20140825_132152.jpg" class="img" alt="Cinque Terre"
+				width="600" height="450"></img>
+			<p>Test123</p>
+		</div>
+	</div>
+	<div class="table-responsive">
+		<table class="table-bordered">
+			<thead>
+				<tr>
+					<th>Schuhe 1</th>
+					<th>Schuhe 2</th>
+					<th>Schuhe 3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="image:${images}">
+					<td><img th:src="@{image.url}" class="img-responsive"
+						th:alt="#{image.name}" width="304" height="236"></img></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

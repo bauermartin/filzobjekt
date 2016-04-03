@@ -1,0 +1,54 @@
+<div th:fragment="text_dialog">
+	<!-- Modal -->
+	<div class="modal fade" id="text_dialog" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="dialog_close1"
+						data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Text änderung</h4>
+				</div>
+				<div class="modal-body">
+					<textarea name="editor" id="editor" rows="10" cols="80">
+                
+            </textarea>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="dialog_close2"
+						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div th:fragment="image_dialog">
+	<!-- Modal -->
+	<div class="modal fade" id="image_dialog" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" id="dialog_close1"
+						data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Image Browser</h4>
+				</div>
+				<div class="modal-body">
+					<input type="text" class="browser_url" /><span class="browse_icon">Browse</span>
+					<div class="browser_window"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="dialog_close2"
+						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

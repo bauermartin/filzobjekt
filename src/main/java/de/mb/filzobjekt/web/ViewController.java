@@ -1,8 +1,12 @@
 package de.mb.filzobjekt.web;
 
+import java.util.LinkedList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import de.mb.filzobjekt.bean.Image;
 
 /**
  * Servlet implementation class Master
@@ -10,8 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ViewController {
 
+	private boolean isAdmin;
+
 	@RequestMapping(value = "/handbag")
-	private static ModelAndView handbag() {
+	private static ModelAndView handbag(
+			@CookieValue(value = "authorisation", defaultValue = "") String fooCookie) {
+		System.out.println("Cookie: " + fooCookie);
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		mv.addObject("template", "handbag");
@@ -23,6 +31,13 @@ public class ViewController {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		mv.addObject("template", "home");
+		return mv;
+	}
+
+	@RequestMapping("/login")
+	private static ModelAndView login() {
+		final ModelAndView mv = new ModelAndView();
+		mv.setViewName("login");
 		return mv;
 	}
 
@@ -42,11 +57,11 @@ public class ViewController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/scarf")
-	private static ModelAndView scarf() {
+	@RequestMapping(value = "/wall_hanging")
+	private static ModelAndView wall_hanging() {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
-		mv.addObject("template", "scarf");
+		mv.addObject("template", "wall_hanging");
 		return mv;
 	}
 
@@ -63,9 +78,13 @@ public class ViewController {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		mv.addObject("template", "shoes");
+		List<Image> images = new LinkedList<>();
+		images.add(new Image(0, "image/schuhe mit punkten.jpg", "Schuhe mit punkten"));
+		images.add(new Image(1, "image/Schuhe grau.jpg", "Schuhe grau"));
+		mv.addObject(images);
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/gabi")
 	private static ModelAndView gabi() {
 		final ModelAndView mv = new ModelAndView();
@@ -73,7 +92,7 @@ public class ViewController {
 		mv.addObject("template", "gabi");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/orders")
 	private static ModelAndView orders() {
 		final ModelAndView mv = new ModelAndView();
@@ -81,15 +100,15 @@ public class ViewController {
 		mv.addObject("template", "orders");
 		return mv;
 	}
-	
-	@RequestMapping(value = "/markets")
-	private static ModelAndView markets() {
+
+	@RequestMapping(value = "/events")
+	private static ModelAndView events() {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
-		mv.addObject("template", "markets");
+		mv.addObject("template", "events");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/impressum")
 	private static ModelAndView impressum() {
 		final ModelAndView mv = new ModelAndView();
