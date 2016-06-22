@@ -1,6 +1,7 @@
 package de.mb.filzobjekt.filter;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.servlet.Filter;
@@ -20,8 +21,6 @@ import de.mb.filzobjekt.business.factory.AuthorizationFactory;
 /**
  * Servlet Filter implementation class Admin
  */
-@WebFilter("/*")
-@Component
 public class AdminFilter implements Filter {
 
 	private static IAuthorizationService auth_service;
@@ -49,7 +48,6 @@ public class AdminFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		String admin = (String) req.getAttribute("admin");
 		if (admin != null && admin.equals("true")) {
-			System.out.println("Admin true");
 			res.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 			return;
 		}
@@ -62,15 +60,16 @@ public class AdminFilter implements Filter {
 		String uri = req.getRequestURI();
 		p = Pattern.compile("^.+?rest/login$");
 		m = p.matcher(uri);
-		System.out.println(req.getRequestURI());
 		String token = null;
 		if (m.matches()) {
 			String username = req.getParameter("username");
 			String pw = req.getParameter("password");
 			if (auth_service.loginAdmin(username, pw)) {
 				token = auth_service.getToken(username, request.getRemoteAddr());
-				System.out.println(token);
-				res.setHeader("authorization", token);
+				URLEncoder.encode(token, "UTF-8");
+				Cookie cookie = new Cookie("authorization", "\"" + token+ "\"");
+				cookie.setMaxAge(600);
+				res.addCookie(cookie);
 				chain.doFilter(req, res);
 				return;
 			}
@@ -78,9 +77,15 @@ public class AdminFilter implements Filter {
 			res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 			return;
 		}
-		
-		token = req.getHeader("authorization");
-		
+
+		Cookie[] cookies = req.getCookies();
+		for (Cookie cookie : cookies) {
+			if ("authorization".equals(cookie.getName())) {
+				token = cookie.getValue();
+				break;
+			}
+		}
+
 		p = Pattern.compile("^.+?rest/*$");
 		m = p.matcher(uri);
 		if (m.matches()) {

@@ -14,7 +14,7 @@ if (typeof de.filzobjekt == 'undefined') {
 	init();
 
 	de.filzobjekt.render = function() {
-		de.filzobjekt.mainmodel.render();
+		//de.filzobjekt.mainmodel.render();
 	};
 })(jQuery);
 

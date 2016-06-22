@@ -20,4 +20,11 @@ public class Image {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	@Override
+	public String toString() {
+		return "Image [id=" + id + ", url=" + url + "]";
+	}
+	
+	
 }
