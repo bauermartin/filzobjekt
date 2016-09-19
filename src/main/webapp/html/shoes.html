@@ -1,24 +1,29 @@
 <div th:fragment="shoes">
 	<div class="row mainpage visible-sm visible-md visible-lg">
 		<div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
-			<img src="images/20140825_132152.jpg" class="img" alt="Cinque Terre"
-				width="600" height="450"></img>
+			<img id="shoesPreview" src="images/20140825_132152.jpg" class="img"
+				alt="Cinque Terre" width="600" height="450"></img>
 			<p>Test123</p>
 		</div>
 	</div>
-	<div class="table-responsive">
-		<table class="table-bordered">
-			<thead>
-				<tr >
-					<th th:each="shoes_table_img:${shoes_table}" th:text="${shoes_table_img.name}">Schuhe 1</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td th:each="shoes_table_img:${shoes_table}"><img th:src="@{${shoes_table_img.url}}"
-						class="img-responsive" th:alt="${shoes_table_img.name}" width="250"></img></td>
-				</tr>
-			</tbody>
-		</table>
+
+	<div class="row">
+		<div class="col-md-1" data-bind="click : shoes.previous">
+			<span>previous</span>
+		</div>
+		<div class="col-md-2 imgRowColumn"
+			th:each="shoes_table_img:${shoes_table}"
+			th:classappend="${shoes_table_img.active} ? activeImg : inactiveImg">
+			<p th:text="${shoes_table_img.name}"></p>
+			<img th:src="@{${shoes_table_img.urlSmall}}" class="img-circle"
+				th:alt="${shoes_table_img.name}" width="150"
+				data-bind="click : shoes.togglePreview"></img>
+		</div>
+		<div class="col-md-1" data-bind="click : shoes.next">
+			<span>next</span>
+		</div>
 	</div>
 </div>
+
+
+

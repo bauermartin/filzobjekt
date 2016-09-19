@@ -1,135 +1,142 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
 <head>
-<meta charset="UTF-8"></meta>
-<title>Filzobjekt</title>
-<link rel="stylesheet" type="text/css" href="css/ext/bootstrap.css"></link>
-<link rel="stylesheet" type="text/css"
-	href="css/ext/bootstrap-theme.css"></link>
-<link rel="stylesheet" type="text/css" href="css/style.css"></link>
-<script type="text/javascript" src="js/ext/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-<script type="text/javascript" src="js/ext/bootstrap.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+	<meta charset="UTF-8"/>
+	<title>Filzobjekt</title>
+	<link rel="stylesheet" type="text/css" href="css/ext/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css"
+	      href="css/ext/bootstrap-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script type="text/javascript" src="js/ext/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="js/ext/bootstrap.js"></script>
+	<script type="text/javascript" src="js/ext/knockout-3.1.0.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </head>
-<body onload="de.filzobjekt.render()">
-	<div class="container">
-		<nav class="filznav navbar navbar-standard " role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-menubuilder">
-						<span class="sr-only">Toggle navigation</span><span
-							class="icon-bar"></span><span class="icon-bar"></span><span
-							class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="collapse navbar-collapse navbar-menubuilder">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="gabi" th:text="#{nav.gabi}"
-							style="font-size: 2em">Gabi Bauer</a></li>
-						<li><a href="orders" th:text="#{nav.orders}">Bestellung</a></li>
-						<li><a href="events" th:text="#{nav.events}">Termine</a></li>
-						<li><a href="impressum" th:text="#{nav.impressum}">Impressum</a></li>
-					</ul>
-				</div>
+<body>
+<div class="container">
+	<nav class="filznav navbar navbar-standard " role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+				        data-target=".navbar-menubuilder">
+					<span class="sr-only">Toggle navigation</span><span
+						class="icon-bar"></span><span class="icon-bar"></span><span
+						class="icon-bar"></span>
+				</button>
 			</div>
-		</nav>
-	</div>
-	<div class="container">
-		<div class=" visible-xs">
-			<div
-				class="filznav collapse navbar-standard navbar-collapse navbar-menubuilder">
-				<ul class="nav navbar-nav">
-					<li><a href="home" th:text="#{nav.home}">Home</a></li>
-					<li><a href="shoes" th:text="#{nav.shoes}">Schuhe</a></li>
-					<li><a href="handbag" th:text="#{nav.handbag}">Taschen</a></li>
-					<li><a href="object" th:text="#{nav.object}">Objekte</a></li>
-					<li><a href="seat_pad" th:text="#{nav.seat_pad}">Kissen</a></li>
-					<li><a href="wall_hanging" th:text="#{nav.wall_hanging}">Wandbehang</a></li>
+			<div class="collapse navbar-collapse navbar-menubuilder">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="gabi" th:text="#{nav.gabi}"
+					       style="font-size: 2em">Gabi Bauer</a></li>
+					<li><a href="orders" th:text="#{nav.orders}">Bestellung</a></li>
+					<li><a href="events" th:text="#{nav.events}">Termine</a></li>
+					<li><a href="impressum" th:text="#{nav.impressum}">Impressum</a></li>
 				</ul>
 			</div>
 		</div>
-		<div class="row mainpage visible-sm visible-md visible-lg">
-			<div class="col-sm-2 col-md-2 col-lg-2">
-				<nav class="navigation navbar floatleft" role="navigation">
+	</nav>
+</div>
+<div class="container">
+	<div class=" visible-xs">
+		<div
+				class="filznav collapse navbar-standard navbar-collapse navbar-menubuilder">
+			<ul class="nav navbar-nav">
+				<li><a href="home" th:text="#{nav.home}">Home</a></li>
+				<li><a href="shoes" th:text="#{nav.shoes}">Schuhe</a></li>
+				<li><a href="handbag" th:text="#{nav.handbag}">Taschen</a></li>
+				<li><a href="object" th:text="#{nav.object}">Objekte</a></li>
+				<li><a href="seat_pad" th:text="#{nav.seat_pad}">Kissen</a></li>
+				<li><a href="wall_hanging" th:text="#{nav.wall_hanging}">Wandbehang</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row mainpage visible-sm visible-md visible-lg">
+		<div class="col-sm-2 col-md-2 col-lg-2">
+			<nav class="navigation navbar floatleft" role="navigation">
 
-					<ul>
-						<li><a th:href="home">
-								<button name="home" class="btn btn-default filz_button"
-									th:text="#{nav.home}"
-									th:classappend="${template}== 'home' ? active : ''">Home</button>
-						</a></li>
-						<li><a th:href="shoes">
-								<button name="shoes" class="btn btn-default filz_button"
-									th:text="#{nav.shoes}"
-									th:classappend="${template}== 'shoes' ? active : ''">Schuhe</button>
-						</a></li>
-						<li><a th:href="handbag">
-								<button name="handbag" class="btn btn-default filz_button"
-									th:text="#{nav.handbag}"
-									th:classappend="${template}== 'handbag' ? active : ''">Taschen</button>
-						</a></li>
-						<li><a th:href="object">
-								<button name="object" class="btn btn-default filz_button"
-									th:text="#{nav.object}"
-									th:classappend="${template}== 'object' ? active : ''">Objekte</button>
-						</a></li>
-						<li><a th:href="seat_pad">
-								<button name="seat_pad" class="btn btn-default filz_button"
-									th:text="#{nav.seat_pad}"
-									th:classappend="${template}== 'seat_pad' ? active : ''">Kissen</button>
-						</a></li>
-						<li><a th:href="wall_hanging">
-								<button name="wall_hanging" class="btn btn-default filz_button"
-									th:text="#{nav.wall_hanging}"
-									th:classappend="${template}== 'wall_hanging' ? active : ''">Wandbehang</button>
-						</a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="col-sm-10 col-md-10 col-lg-10">
-				<div class="filzpage floatleft">
-					<div th:if="${template} == 'home'">
-						<div th:replace="home ::home"></div>
-						<div th:replace="home ::news"></div>
-					</div>
-					<div th:if="${template} == 'shoes'">
-						<div th:replace="shoes :: shoes"></div>
-					</div>
-					<div th:if="${template} == 'handbag'">
-						<div th:replace="handbag :: handbag"></div>
-					</div>
-					<div th:if="${template} == 'object'">
-						<div th:replace="object :: object"></div>
-					</div>
-					<div th:if="${template} == 'seat_pad'">
-						<div th:replace="seat_pad :: seat_pad"></div>
-					</div>
-					<div th:if="${template} == 'wall_hanging'">
-						<div th:replace="wall_hanging :: wall_hanging"></div>
-					</div>
-					<div th:if="${template} == 'gabi'">
-						<div th:replace="gabi :: gabi"></div>
-					</div>
-					<div th:if="${template} == 'orders'">
-						<div th:replace="orders :: orders"></div>
-					</div>
-					<div th:if="${template} == 'events'">
-						<div th:replace="events :: events"></div>
-					</div>
-					<div th:if="${template} == 'impressum'">
-						<div th:replace="impressum :: impressum"></div>
-					</div>
+				<ul>
+					<li><a th:href="home">
+						<button name="home" class="btn btn-default filz_button"
+						        th:text="#{nav.home}"
+						        th:classappend="${template}== 'home' ? active : ''">Home
+						</button>
+					</a></li>
+					<li><a th:href="shoes">
+						<button name="shoes" class="btn btn-default filz_button"
+						        th:text="#{nav.shoes}"
+						        th:classappend="${template}== 'shoes' ? active : ''">Schuhe
+						</button>
+					</a></li>
+					<li><a th:href="handbag">
+						<button name="handbag" class="btn btn-default filz_button"
+						        th:text="#{nav.handbag}"
+						        th:classappend="${template}== 'handbag' ? active : ''">Taschen
+						</button>
+					</a></li>
+					<li><a th:href="object">
+						<button name="object" class="btn btn-default filz_button"
+						        th:text="#{nav.object}"
+						        th:classappend="${template}== 'object' ? active : ''">Objekte
+						</button>
+					</a></li>
+					<li><a th:href="seat_pad">
+						<button name="seat_pad" class="btn btn-default filz_button"
+						        th:text="#{nav.seat_pad}"
+						        th:classappend="${template}== 'seat_pad' ? active : ''">Kissen
+						</button>
+					</a></li>
+					<li><a th:href="wall_hanging">
+						<button name="wall_hanging" class="btn btn-default filz_button"
+						        th:text="#{nav.wall_hanging}"
+						        th:classappend="${template}== 'wall_hanging' ? active : ''">Wandbehang
+						</button>
+					</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-sm-10 col-md-10 col-lg-10">
+			<div class="floatleft">
+				<div th:if="${template} == 'home'">
+					<div th:replace="home ::home"></div>
+					<div th:replace="home ::news"></div>
+				</div>
+				<div class="shoes" th:if="${template} == 'shoes'">
+					<div th:replace="shoes :: shoes"></div>
+				</div>
+				<div th:if="${template} == 'handbag'">
+					<div th:replace="handbag :: handbag"></div>
+				</div>
+				<div th:if="${template} == 'object'" class="container">
+					<div th:replace="object :: object"></div>
+				</div>
+				<div th:if="${template} == 'seat_pad'">
+					<div th:replace="seat_pad :: seat_pad"></div>
+				</div>
+				<div th:if="${template} == 'wall_hanging'">
+					<div th:replace="wall_hanging :: wall_hanging"></div>
+				</div>
+				<div th:if="${template} == 'gabi'">
+					<div th:replace="gabi :: gabi"></div>
+				</div>
+				<div th:if="${template} == 'orders'">
+					<div th:replace="orders :: orders"></div>
+				</div>
+				<div th:if="${template} == 'events'">
+					<div th:replace="events :: events"></div>
+				</div>
+				<div th:if="${template} == 'impressum'">
+					<div th:replace="impressum :: impressum"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div th:if="${isAdmin} == 'true'">
-		<div th:replace="additions :: text_dialog"></div>
-	</div>
-		<div th:if="${isAdmin} == 'true'">
-		<div th:replace="additions :: image_dialog"></div>
-	</div>
+</div>
+<div th:if="${isAdmin} == 'true'">
+	<div th:replace="additions :: text_dialog"></div>
+</div>
+<div th:if="${isAdmin} == 'true'">
+	<div th:replace="additions :: image_dialog"></div>
+</div>
 </body>
 </html>

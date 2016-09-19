@@ -1,14 +1,11 @@
 package de.mb.filzobjekt.web;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import de.mb.filzobjekt.bean.Image;
 import de.mb.filzobjekt.bean.ImageBundle;
 import de.mb.filzobjekt.bean.ImageContainer;
 import de.mb.filzobjekt.business.IImageService;
@@ -24,11 +21,14 @@ public class ViewController {
 	private boolean isAdmin;
 
 	@RequestMapping(value = "/handbag")
-	private ModelAndView handbag(
-			@CookieValue(value = "authorisation", defaultValue = "") String fooCookie) {
+	private ModelAndView handbag() throws IOException {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		mv.addObject("template", "handbag");
+		ImageContainer img_cont = image_service.getImages("shoes");
+		ImageBundle shoes_table_bundle = img_cont.getBundleByID("shoes_table");
+		mv.addObject("handbags", shoes_table_bundle.getAll());
+		System.out.println(Arrays.toString(shoes_table_bundle.getAll()));
 		return mv;
 	}
 

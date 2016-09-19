@@ -68,16 +68,16 @@ html, body {
 }
 
 .filznav.navbar-standard .navbar-toggle {
-	border-color: #ddd;
+	border-color: #dddddd;
 }
 
 .filznav.navbar-standard .navbar-toggle:hover, .filznav.navbar-standard .navbar-toggle:focus
 	{
-	background-color: #ddd;
+	background-color: #dddddd;
 }
 
 .filznav.navbar-standard .navbar-toggle .icon-bar {
-	background-color: #888;
+	background-color: #888888;
 }
 
 .filznav.navbar-standard .navbar-toggle:hover .icon-bar, .filznav.navbar-standard .navbar-toggle:focus .icon-bar
@@ -113,4 +113,31 @@ html, body {
 
 button.filz_button {
 	width: 100%;
+}
+
+.inactiveImg {
+	display: none;
+}
+
+.activeImg img {
+	margin-left: -10px;
+}
+
+.filzCarousel {
+	margin: 10px 20px 0px 0px;
+}
+
+.line {
+	border-top: 2px solid darkgrey;
+	margin: 5px 0 5px 0;
+}
+
+.date {
+	padding-left: 20px;
+}
+.parag{
+	margin-top: 30px;
+}
+#gabi row{
+	margin-top:5px;
 }
