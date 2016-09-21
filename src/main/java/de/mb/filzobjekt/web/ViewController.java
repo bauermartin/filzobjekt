@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 import de.mb.filzobjekt.bean.ImageBundle;
 import de.mb.filzobjekt.bean.ImageContainer;
 import de.mb.filzobjekt.business.IImageService;
+import de.mb.filzobjekt.business.ImageService;
+import de.mb.filzobjekt.repository.file_repository.ImageRepository;
 
 /**
  * Servlet implementation class Master
@@ -25,10 +27,10 @@ public class ViewController {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		mv.addObject("template", "handbag");
-		ImageContainer img_cont = image_service.getImages("shoes");
-		ImageBundle shoes_table_bundle = img_cont.getBundleByID("shoes_table");
-		mv.addObject("handbags", shoes_table_bundle.getAll());
-		System.out.println(Arrays.toString(shoes_table_bundle.getAll()));
+		ImageContainer img_cont = image_service.getImages(ImageService.HANDBAG);
+		ImageBundle handbag_bundle = img_cont.getBundleByID("handbags");
+		mv.addObject("handbags", handbag_bundle.getAll());
+		System.out.println(Arrays.toString(handbag_bundle.getAll()));
 		return mv;
 	}
 
@@ -84,7 +86,7 @@ public class ViewController {
 		final ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
 		mv.addObject("template", "shoes");
-		ImageContainer img_cont = image_service.getImages("shoes");
+		ImageContainer img_cont = image_service.getImages(ImageService.SHOES);
 		ImageBundle shoes_table_bundle = img_cont.getBundleByID("shoes_table");
 		mv.addObject("shoes_table", shoes_table_bundle.getAll());
 		return mv;

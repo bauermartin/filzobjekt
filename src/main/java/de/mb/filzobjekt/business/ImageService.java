@@ -13,8 +13,10 @@ import de.mb.filzobjekt.repository.file_repository.IImageRepository;
 @Controller
 public class ImageService implements IImageService {
 
-	@Autowired IImageRepository img_repository;
-	
+	@Autowired private IImageRepository img_repository;
+	public static final String SHOES = "shoes_images";
+	public static final String HANDBAG = "handbag_images";
+
 	@Override
 	public ImageContainer getImages(String field_id) throws IOException {
 		return img_repository.get(field_id);

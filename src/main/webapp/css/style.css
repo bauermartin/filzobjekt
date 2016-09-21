@@ -21,6 +21,8 @@ html, body {
 	background-color: #3e5b5b;
 	border-right: 1px solid grey;
 	height: 100%;
+	border-top-right-radius : 0px;
+	border-top-left-radius : 0px;
 }
 
 .navigation ul {
@@ -129,7 +131,7 @@ button.filz_button {
 
 .line {
 	border-top: 2px solid darkgrey;
-	margin: 5px 0 5px 0;
+	margin: 15px 0 5px 0;
 }
 
 .date {

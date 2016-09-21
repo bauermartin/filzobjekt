@@ -1,8 +1,8 @@
 <div th:fragment="shoes">
 	<div class="row mainpage visible-sm visible-md visible-lg">
 		<div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
-			<img id="shoesPreview" src="images/20140825_132152.jpg" class="img"
-				alt="Cinque Terre" width="600" height="450"></img>
+			<img id="shoesPreview" src="images/.jpg" class="img"
+				alt="Cinque Terre" width="600"></img>
 			<p>Test123</p>
 		</div>
 	</div>
@@ -16,7 +16,7 @@
 			th:classappend="${shoes_table_img.active} ? activeImg : inactiveImg">
 			<p th:text="${shoes_table_img.name}"></p>
 			<img th:src="@{${shoes_table_img.urlSmall}}" class="img-circle"
-				th:alt="${shoes_table_img.name}" width="150"
+				th:alt="${shoes_table_img.name}" width="150" height="130"
 				data-bind="click : shoes.togglePreview"></img>
 		</div>
 		<div class="col-md-1" data-bind="click : shoes.next">
