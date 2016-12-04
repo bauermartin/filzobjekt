@@ -1,6 +1,6 @@
 package de.mb.filzobjekt.bean;
 
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -11,9 +11,9 @@ import java.util.Map;
  */
 public abstract class AbstractContainer<T extends SimpleBundle<?>> {
 
-	protected Map<String, T> content = new LinkedHashMap<>();
+	protected Map<String, T> content = new HashMap<>();
 
-	public abstract T[] getAllBundles();
+	public abstract Map<String, ImageBundle> getAllBundles();
 
 	public T getBundleByID(String id) {
 		if (id == null) {

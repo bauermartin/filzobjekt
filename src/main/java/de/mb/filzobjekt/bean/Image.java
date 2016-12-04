@@ -21,6 +21,16 @@ public class Image {
 		this.active = active;
 	}
 
+	public Image() {}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public Image(int id, String url, String name) {
 		this.id = id;
 		this.setName(name);
@@ -55,7 +65,7 @@ public class Image {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public String getUrl() {
 		return url;
 	}

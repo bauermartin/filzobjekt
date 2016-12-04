@@ -12,6 +12,9 @@ public abstract class SimpleBundle<T> {
 	private String id;
 	protected List<T> content = new LinkedList<>();
 
+	public SimpleBundle() {
+	}
+	
 	public SimpleBundle(String id, T[] arr) {
 		this.id = id;
 		for (T t : arr) {
@@ -27,6 +30,10 @@ public abstract class SimpleBundle<T> {
 	public String getId() {
 		return id;
 	}
+	
+	public void setId(String id) {
+		this.id = id;
+	}
 
-	public abstract T[] getAll();
+	public abstract T[] getImages();
 }
