@@ -21,8 +21,8 @@ html, body {
 	background-color: #3e5b5b;
 	border-right: 1px solid grey;
 	height: 100%;
-	border-top-right-radius : 0px;
-	border-top-left-radius : 0px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
 }
 
 .navigation ul {
@@ -36,6 +36,44 @@ html, body {
 
 .filzpage {
 	min-height: 700px;
+}
+
+@media ( max-width : 991px) {
+	.navbar-header {
+		float: none;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+	.navbar-collapse {
+		border-top: 1px solid transparent;
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+	}
+	.navbar-collapse.collapse {
+		display: none !important;
+	}
+	.navbar-nav {
+		float: none !important;
+		margin: 7.5px -15px;
+	}
+	.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.navbar-text {
+		float: none;
+		margin: 15px 0;
+	}
+	/* since 3.1.0 */
+	.navbar-collapse.collapse.in {
+		display: block !important;
+	}
+	.collapsing {
+		overflow: hidden !important;
+	}
 }
 
 .filznav {
@@ -108,6 +146,11 @@ html, body {
 	padding: 10px 100px 100px 100px;
 }
 
+.glyphicon.glyphicon-one-fine-dot:before {
+	content: "\25cf";
+	font-size: 1em;
+}
+
 .news_text {
 	font-size: 1.5em;
 	padding: 10px 100px 100px 0;
@@ -137,9 +180,43 @@ button.filz_button {
 .date {
 	padding-left: 20px;
 }
-.parag{
+
+.parag {
 	margin-top: 30px;
 }
-#gabi row{
-	margin-top:5px;
+
+.carouselContainer {
+	margin-top: 30px;
+	width: 90%;
+}
+
+.tablerow {
+	margin-top: 10px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.navArrow {
+	height: 130px;
+	padding-top: 70px;
+}
+
+.shoes {
+	padding-top: 10px;
+	min-height: 700px;
+}
+
+.list_dot {
+	margin-right: 10px;
+}
+
+.table_img {
+	width: 200px;
+}
+
+.carousel-inner img {
+	margin: auto;
+	min-height: 600px;
 }

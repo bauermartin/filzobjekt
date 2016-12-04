@@ -12,7 +12,6 @@ if (typeof de.filzobjekt == 'undefined') {
  */
 $(function() {
 	init();
-	console.log("init");
 });
 
 /**
@@ -22,10 +21,71 @@ function init() {
 	de.filzobjekt.ViewModel = new ViewModel({
 		target : {
 			shoes : $('.shoes'),
-			home : $('.home')
+			home : $('.home'),
 		}
 	});
 	ko.applyBindings(de.filzobjekt.ViewModel);
+}
+
+function Shoes(_shoesConf) {
+	var _me = this;
+	_me.previewImg = $('#shoesPreview');
+	_me.imgStart = 4;
+	_me.imageRowName = $('.imgNames .imgRowColumn');
+	_me.imageRow = $('.images .imgRowColumn');
+	var first = $(_me.imageRow[0]).find('img');
+	// toggle first Item
+	_me.previewImg.attr('src', first.attr('src'));
+
+	_me.togglePreview = function(arguments, ev) {
+		var clickedImg = $(ev.currentTarget);
+		var src = clickedImg.attr('src_big');
+		_me.previewImg.attr('src', src);
+	};
+	_me.next = function() {
+		if ((_me.imgStart + 1) > _me.imageRow.length) {
+			return;
+		}
+		$.each(_me.imageRow, function(i) {
+			var img = $(this);
+			img.removeClass('activeImg');
+			img.addClass('inactiveImg');
+			img = $(_me.imageRowName[i]);
+			img.removeClass('activeImg');
+			img.addClass('inactiveImg');
+		});
+		for (var i = 0; i < 4; i++) {
+			var img = $(_me.imageRow[_me.imgStart + i]);
+			img.addClass('activeImg');
+			img.removeClass('inactiveImg');
+			img = $(_me.imageRowName[_me.imgStart + i]);
+			img.addClass('activeImg');
+			img.removeClass('inactiveImg');
+		}
+		_me.imgStart += 4;
+	};
+	_me.previous = function() {
+		if (_me.imgStart - 4 <= 0) {
+			return;
+		}
+		$.each(_me.imageRow, function(i) {
+			var img = $(this);
+			img.removeClass('activeImg');
+			img.addClass('inactiveImg');
+			img = $(_me.imageRowName[i]);
+			img.removeClass('activeImg');
+			img.addClass('inactiveImg');
+		});
+		_me.imgStart -= 4;
+		for (var i = 4; i > 0; i--) {
+			var img = $(_me.imageRow[_me.imgStart - i]);
+			img.addClass('activeImg');
+			img.removeClass('inactiveImg');
+			img = $(_me.imageRowName[_me.imgStart + i]);
+			img.addClass('activeImg');
+			img.removeClass('inactiveImg');
+		}
+	};
 }
 
 /**
@@ -35,59 +95,9 @@ function init() {
 function ViewModel(_conf) {
 	var self = this;
 	self.dialog = null;
-	self.shoes = new Shoes({
-		target : _conf.target.shoes
-	});
-
-	function Shoes(_shoesConf) {
-		var _me = this;
-		_me.previewImg = $('#shoesPreview');
-		_me.imgStart = 5;
-		_me.imageRow = $('.imgRowColumn');
-		_me.togglePreview = function(arguments, ev) {
-			var clickedImg = $(ev.currentTarget);
-			var src = clickedImg.attr('src');
-			_me.previewImg.attr('src', src);
-		};
-		_me.next = function() {
-			if ((_me.imgStart + 1) > _me.imageRow.length) {
-				return;
-			}
-			$.each(_me.imageRow, function() {
-				var img = $(this);
-				img.removeClass('activeImg');
-				img.addClass('inactiveImg');
-			});
-			console.log(_me.imgStart);
-			for (var i = 0; i < 5; i++) {
-				var img = $(_me.imageRow[_me.imgStart + i]);
-				img.addClass('activeImg');
-				img.removeClass('inactiveImg');
-			}
-			_me.imgStart += 5;
-		};
-		_me.previous = function() {
-			if (_me.imgStart - 5 <= 0) {
-				return;
-			}
-			$.each(_me.imageRow, function() {
-				var img = $(this);
-				img.removeClass('activeImg');
-				img.addClass('inactiveImg');
-			});
-			_me.imgStart -= 5;
-			console.log(_me.imgStart);
-			for (var i = 5; i > 0; i--) {
-				var pos = _me.imgStart - i;
-				console.log(pos);
-				var img = $(_me.imageRow[_me.imgStart - i]);
-				img.addClass('activeImg');
-				img.removeClass('inactiveImg');
-			}
-		};
-	}
-
-	self.render = function() {
-
+	if (_conf.target.shoes) {
+		self.shoes = new Shoes({
+			target : _conf.target.shoes
+		});
 	}
 }

@@ -1,158 +1,200 @@
 <div th:fragment="gabi" id="gabi">
-	<div class="row">
-		<div class="col-sm-6 col-md-6 col-lg-6" style="text-align: center">
-			<img src="images/gabi bauer.jpg" class="img-responsible"
-				style="width: 200px; padding-top: 20px;" alt="Cinque Terre"></img>
-		</div>
-		<div class="col-sm-4 col-md-4 col-lg-4" style="text-align: left">
-			<p style="padding-top: 20px">Manggasse 9</p>
-			<p>86732 Oettingen</p>
-			<p>Tel. 09082-9111736</p>
-			<p>E-Mail: bauer.gabi@t-online.de</p>
-		</div>
-	</div>
-	<div class="row line"></div>
-	<div class="row">
-		<div class="col-sm-3 col-md-3 col-lg-3 date">1962</div>
-		<div class="col-sm-9 col-md-9 col-lg-9">
-			geb. in Deggendorf, <br></br>Schule: Mittlere Reife, Ausbildung:
-			Kaufmännisch
+	<div class="parag">
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-lg-6" style="text-align: center">
+				<img th:src="${gabi.url}" class="img-responsible"
+					style="width: 200px;" th:alt="${gabi.name}"></img>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="row">Manggasse 9</div>
+				<div class="row">86732 Oettingen</div>
+				<div class="row">Tel. 09082-9111736</div>
+				<div class="row">E-Mail: bauer.gabi@t-online.de</div>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-3 col-md-3 col-lg-3 date">Seit 1986</div>
-		<div class="col-sm-9 col-md-9 col-lg-9">Erlernen textiler
-			Techniken (Spinnen, weben, färben und filzen) Autodidaktin</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-3 col-md-3 col-lg-3 date">Seit 1989</div>
-		<div class="col-sm-9 col-md-9 col-lg-9">Mitarbeit im
-			Bildhaueratelier und Kunst-am-Bau-Vorhaben</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-3 col-md-3 col-lg-3 date">Seit 2000</div>
-		<div class="col-sm-9 col-md-9 col-lg-9">eigenes Atelier
-			Kursangebote</div>
-	</div>
-	<div class="row parag">
-		<div class="col-sm-12 col-md-12 col-lg-12">
-			<b>Mitgliedschaften:</b> GEDOK Gruppe Franken e.V. - Kunstverein
-			Nördlingen
+	<div class="line"></div>
+	<div class="parag">
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3 date">1962</div>
+			<div class="col-sm-9 col-md-9 col-lg-9">
+				geb. in Deggendorf, <br></br>Schule: Mittlere Reife, Ausbildung:
+				Kaufmännisch
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3 date">Seit 1986</div>
+			<div class="col-sm-9 col-md-9 col-lg-9">Erlernen textiler
+				Techniken (Spinnen, weben, färben und filzen) Autodidaktin</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3 date">Seit 1989</div>
+			<div class="col-sm-9 col-md-9 col-lg-9">Mitarbeit im
+				Bildhaueratelier und Kunst-am-Bau-Vorhaben</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3 date">Seit 2000</div>
+			<div class="col-sm-9 col-md-9 col-lg-9">eigenes Atelier
+				Kursangebote</div>
 		</div>
 	</div>
-	<div class="row parag">
-		<div class="col-sm-12 col-md-12 col-lg-12">
-			<b>Gruppen- und Einzelausstellungen</b>
+	<div class="parag">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<b>Mitgliedschaften:</b> GEDOK Gruppe Franken e.V. - Kunstverein
+				Nördlingen
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Schaffenslust -
-			Heimatfrust, Heimatmuseum Oettingen</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Baur Optik,
-			Donauwörth , GEDOK Franken Zeit(t)räume</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Kunstweg -
-			Bodenwerder</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">TanzArtProjekt, TABU,
-			Dance &amp; Praise, Bonn-Hannover</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Kunst+Handwerk,
-			Rosenheim</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">GEDOK Franken,
-			grenzenlos, Nürnberg - Rothenburg</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Ateliertage
-			Nördlingen, Evang.Volkshochschule Hesselberg</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Galerie Caesar,
-			Olomouc, Tschechien</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Schloss Leitheim,
-			Torturm Kaisheim</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Große Schwäbische
-			Kunstausstellung</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Fotoausstellung
-			Frauenlust-Frauenfrust (2.Preis)</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Textilbiennale Krosno
-			(PL), GEDOK Nürnberg Einblick-Ausblick</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Schweinzeit Kloster
-			Asbach, Kunstsommer Halle</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Handwerksmuseum
-			Deggendorf</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Rund-um-Kunst
-			Mauerschau Nördlingen</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">Hand aufs Herz
-			Oettingen, Kloster Wechterswinkel</div>
-	</div>
-	<div class="row parag">
-		<div class="col-sm-12 col-md-12 col-lg-12">
-			<b>Kursangebote</b>
+	<div class="parag">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<b>Gruppen- und Einzelausstellungen</b>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Schaffenslust
+				- Heimatfrust, Heimatmuseum Oettingen
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Baur
+				Optik, Donauwörth , GEDOK Franken Zeit(t)räume
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Kunstweg
+				- Bodenwerder
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>TanzArtProjekt,
+				TABU, Dance &amp; Praise, Bonn-Hannover
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Kunst+Handwerk,
+				Rosenheim
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>GEDOK
+				Franken, grenzenlos, Nürnberg - Rothenburg
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Ateliertage
+				Nördlingen, Evang.Volkshochschule Hesselberg
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Galerie
+				Caesar, Olomouc, Tschechien
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Schloss
+				Leitheim, Torturm Kaisheim
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Große
+				Schwäbische Kunstausstellung
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Fotoausstellung
+				Frauenlust-Frauenfrust (2.Preis)
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Textilbiennale
+				Krosno (PL), GEDOK Nürnberg Einblick-Ausblick
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Schweinzeit
+				Kloster Asbach, Kunstsommer Halle
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Handwerksmuseum
+				Deggendorf
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Rund-um-Kunst
+				Mauerschau Nördlingen
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<span class="glyphicon glyphicon-one-fine-dot list_dot"></span>Hand
+				aufs Herz Oettingen, Kloster Wechterswinkel
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">
-			<a href="http://www.ebz-hesselberg.de">www.ebz-hesselberg.de</a>
+	<div class="parag">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12">
+				<b>Kursangebote</b>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">
-			<a href="http://www.holunderhof-lohe.de">www.holunderhof-lohe.de</a>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<a href="http://www.ebz-hesselberg.de">www.ebz-hesselberg.de</a>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">
-			<a href="http://www.vhs-oettingen.de">www.vhs-oettingen.de</a>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<a href="http://www.holunderhof-lohe.de">www.holunderhof-lohe.de</a>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-1 col-md-1 col-lg-1"></div>
-		<div class="col-sm-11 col-md-11 col-lg-11">
-			Filzwerkstatt in der Kammgarnspinnerei Monika Fergg<br/>Tel.:
-			0821/567 267 7
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				<a href="http://www.vhs-oettingen.de">www.vhs-oettingen.de</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-1 col-md-1 col-lg-1"></div>
+			<div class="col-sm-11 col-md-11 col-lg-11">
+				Filzwerkstatt in der Kammgarnspinnerei Monika Fergg<br />Tel.:
+				0821/567 267 7
+			</div>
 		</div>
 	</div>
 </div>

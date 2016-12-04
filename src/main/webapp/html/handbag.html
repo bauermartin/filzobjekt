@@ -1,4 +1,4 @@
-<div th:fragment="handbag" class="">
+<div th:fragment="handbag" class="carouselContainer container">
 	<div id="handBagCarousel" class="carousel slide filzCarousel" data-ride="carousel" >
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -13,21 +13,17 @@
 			     th:classappend="${itemStat.index} == 0 ? active: ''">
 				<img th:src="@{${handbag.url}}"
 				     th:alt="${handbag.name}"></img>
-				<div class="carousel-caption">
-					<h3 th:text="${handbag.name}"></h3>
-					<p th:text="${handbag.description}"></p>
-				</div>
 			</div>
 		</div>
 
 		<!-- Left and right controls -->
 		<a class="left carousel-control" href="#handBagCarousel" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
+			<span class="sr-only"></span>
 		</a>
 		<a class="right carousel-control" href="#handBagCarousel" role="button" data-slide="next">
 			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
+			<span class="sr-only"></span>
 		</a>
 	</div>
 </div>

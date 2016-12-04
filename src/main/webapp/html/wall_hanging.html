@@ -1,10 +1,31 @@
-<div th:fragment="wall_hanging">
-	<div class="row mainpage visible-sm visible-md visible-lg">
-		<div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
-			<h1>Wände schön alles schön!!</h1>
-			<img class="img-responsible" src="images/P1040717.JPG"
-				style="height: 500px; width: 600"></img>
-			<p>Diashow!!</p>
+<div th:fragment="wall_hanging" class="carouselContainer container">
+	<div id="wallHangingCarousel" class="carousel slide filzCarousel"
+		data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#wallHangingCarousel"
+				th:each="wallhanging,itemStat : ${wall_hangings}"
+				th:classappend="${itemStat.index} == 0 ? active: ''"
+				th:attr="data-slide-to=${itemStat.index}"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item" th:each="wallhanging,itemStat : ${wall_hangings}"
+				th:classappend="${itemStat.index} == 0 ? active: ''">
+				<img class="img-responsive" th:src="@{${wallhanging.url}}" th:alt="${wallhanging.name}"></img>
+			</div>
 		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#wallHangingCarousel"
+			role="button" data-slide="prev"> <span
+			class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span
+			class="sr-only"></span>
+		</a> <a class="right carousel-control" href="#wallHangingCarousel"
+			role="button" data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only"></span>
+		</a>
 	</div>
 </div>

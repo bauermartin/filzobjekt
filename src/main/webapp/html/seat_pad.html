@@ -1,48 +1,25 @@
-<div th:fragment="seat_pad">
-	<div class="table-responsive parag">
-		<table class="table-bordered">
-			<tbody>
-				<tr>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-				</tr>
-				<tr>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-				</tr>
-				<tr>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-				</tr>
-				<tr>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-					<td><img src="images/P1040871.JPG" class="img-responsive"
-						alt="Cinque Terre" width="200" height="200"></img></td>
-				</tr>
-			</tbody>
-		</table>
+<div th:fragment="seat_pad" id="seat_pad">
+	<div class="parag">
+		<div class="row">
+			<div th:each="seat_pat_img:${row1}"
+				class="col-xs-3 col-ms-3 col-lg-3">
+				<img th:src="@{${seat_pat_img.urlSmall}}" class="img-responsive table_img"
+					th:alt="${seat_pat_img.name}"></img>
+			</div>
+		</div>
+		<div class="row tablerow">
+			<div th:each="seat_pat_img:${row2}"
+				class="col-xs-3 col-ms-3 col-lg-3">
+				<img th:src="@{${seat_pat_img.urlSmall}}" class="img-responsive table_img"
+					th:alt="${seat_pat_img.name}"></img>
+			</div>
+		</div>
+		<div class="row tablerow">
+			<div th:each="seat_pat_img:${row3}"
+				class="col-xs-3 col-ms-3 col-lg-3">
+				<img th:src="@{${seat_pat_img.urlSmall}}" class="img-responsive table_img"
+					th:alt="${seat_pat_img.name}"></img>
+			</div>
+		</div>
 	</div>
 </div>

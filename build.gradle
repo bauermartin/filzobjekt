@@ -19,16 +19,19 @@ repositories {
 
 dependencies {
 	compile 'org.thymeleaf:thymeleaf-spring4:2.1.2.RELEASE',
+			'org.thymeleaf:thymeleaf:2.1.2.RELEASE',
 			'org.springframework:spring-webmvc:[3.2,4)',
 			'com.fasterxml.jackson.core:jackson-databind:[2.3,2.6)',
 			'commons-codec:commons-codec:1.4'
 
-	providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
-
-	providedRuntime 'org.eclipse.jetty.aggregate:jetty-all:9.0.6.v20130930'
+	provided 'javax.servlet:javax.servlet-api:3.1.0'
 }
 
-tasks.withType(JavaCompile) { options.encoding = 'UTF-8' }
+tasks.withType(JavaCompile) {
+	options.fork = true
+	options.forkOptions.executable = "${project.javacPath7}"
+	options.encoding = 'UTF-8'
+}
 
 task hello {
 	doFirst {
@@ -36,7 +39,6 @@ task hello {
 				"\n\tGradle Version: $gradle.gradleVersion"
 	}
 }
-
 task sourceJar(type: Jar) {
 	classifier = 'sources'
 	from sourceSets.main.allJava

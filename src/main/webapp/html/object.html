@@ -1,8 +1,30 @@
-<div th:fragment="object">
-	<div class="row mainpage visible-sm visible-md visible-lg">
-		<div class="col-sm-12 col-md-12 col-lg-12" style="text-align: center">
-			<h1>Hier wird noch gebrütet!!</h1>
-			<img class="img-responsible" src="images/P1040717.JPG" style="height:500px;width:600"></img>
+<div th:fragment="object" class="carouselContainer container">
+	<div id="objectCarousel" class="carousel slide filzCarousel"
+		data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#objectCarousel"
+				th:each="object,itemStat : ${objects}"
+				th:classappend="${itemStat.index} == 0 ? active: ''"
+				th:attr="data-slide-to=${itemStat.index}"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item" th:each="object,itemStat : ${objects}"
+				th:classappend="${itemStat.index} == 0 ? active: ''">
+				<img th:src="@{${object.url}}" th:alt="${object.name}"></img>
+			</div>
 		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#objectCarousel" role="button"
+			data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+			aria-hidden="true"></span> <span class="sr-only"></span>
+		</a> <a class="right carousel-control" href="#objectCarousel"
+			role="button" data-slide="next"> <span
+			class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only"></span>
+		</a>
 	</div>
 </div>
