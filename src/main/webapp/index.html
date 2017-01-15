@@ -11,6 +11,7 @@
 	th:href="@{css/bootstrap/css/bootstrap-theme.css}" />
 <link rel="stylesheet" type="text/css" th:href="@{css/style.css}" />
 <script type="text/javascript" th:src="@{js/ext/jquery-2.1.4.js}"></script>
+<script type="text/javascript" th:src="@{js/ext/jquery.mobile.custom.min.1.4.5.js}"></script>
 <script type="text/javascript" th:src="@{js/ext/bootstrap.js}"></script>
 <script type="text/javascript" th:src="@{js/ext/knockout-3.1.0.js}"></script>
 <script type="text/javascript" th:src="@{js/main.js}"></script>
@@ -19,7 +20,6 @@
 	<div class="container">
 		<nav class="filznav navbar navbar-standard "
 			style="border-bottom-left-radius: 0px" role="navigation">
-			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
 						data-target=".navbar-menubuilder">
@@ -36,7 +36,6 @@
 						<li><a href="events" th:text="#{nav.events}">Termine</a></li>
 						<li><a href="impressum" th:text="#{nav.impressum}">Impressum</a></li>
 					</ul>
-				</div>
 			</div>
 		</nav>
 	</div>
@@ -55,8 +54,33 @@
 			</div>
 		</div>
 		<div class="container mainpage visible-xs visible-sm">
-			<div th:if="${template} != 'impressum'">Die Seite ist für eine
-				Darstellung auf diesem Format leider noch in Arbeit.</div>
+			<div th:if="${template} == 'home'">
+				<div th:replace="home ::home_mobile"></div>
+			</div>
+			<div class="shoes" th:if="${template} == 'shoes'">
+				<div th:replace="shoes :: shoes"></div>
+			</div>
+			<div th:if="${template} == 'handbag'">
+				<div th:replace="handbag :: handbag"></div>
+			</div>
+			<div th:if="${template} == 'object'">
+				<div th:replace="object :: object"></div>
+			</div>
+			<div th:if="${template} == 'seat_pad'">
+				<div th:replace="seat_pad :: seat_pad"></div>
+			</div>
+			<div th:if="${template} == 'wall_hanging'">
+				<div th:replace="wall_hanging :: wall_hanging"></div>
+			</div>
+			<div th:if="${template} == 'gabi'">
+				<div th:replace="gabi :: gabi"></div>
+			</div>
+			<div th:if="${template} == 'orders'">
+				<div th:replace="orders :: orders"></div>
+			</div>
+			<div th:if="${template} == 'events'">
+				<div th:replace="events :: events_mobile"></div>
+			</div>
 			<div th:if="${template} == 'impressum'">
 				<div th:replace="impressum :: impressum"></div>
 			</div>

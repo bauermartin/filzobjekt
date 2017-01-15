@@ -21,10 +21,20 @@ function init() {
 	de.filzobjekt.ViewModel = new ViewModel({
 		target : {
 			shoes : $('.shoes'),
-			home : $('.home'),
+			home : $('.home')
 		}
 	});
 	ko.applyBindings(de.filzobjekt.ViewModel);
+
+	$.each($(".carousel"), function() {
+		$(this).swiperight(function() {
+			$(this).carousel('prev');
+		});
+		$(this).swipeleft(function() {
+			$(this).carousel('next');
+		});
+	});
+
 }
 
 function Shoes(_shoesConf) {
