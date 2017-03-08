@@ -58,7 +58,7 @@
 				<div th:replace="home ::home_mobile"></div>
 			</div>
 			<div class="shoes" th:if="${template} == 'shoes'">
-				<div th:replace="shoes :: shoes"></div>
+				<div th:replace="shoes :: shoes_mobile"></div>
 			</div>
 			<div th:if="${template} == 'handbag'">
 				<div th:replace="handbag :: handbag"></div>
@@ -79,7 +79,7 @@
 				<div th:replace="orders :: orders"></div>
 			</div>
 			<div th:if="${template} == 'events'">
-				<div th:replace="events :: events_mobile"></div>
+				<div th:replace="events :: events"></div>
 			</div>
 			<div th:if="${template} == 'impressum'">
 				<div th:replace="impressum :: impressum"></div>
@@ -161,12 +161,6 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div th:if="${isAdmin} == 'true'">
-		<div th:replace="additions :: text_dialog"></div>
-	</div>
-	<div th:if="${isAdmin} == 'true'">
-		<div th:replace="additions :: image_dialog"></div>
 	</div>
 </body>
 </html>

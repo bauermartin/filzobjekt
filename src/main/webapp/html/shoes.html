@@ -31,6 +31,35 @@
 		</div>
 	</div>
 </div>
+<div th:fragment="shoes_mobile">
+	<div id="shoesCarousel" class="carousel slide filzCarousel" data-ride="carousel" >
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#shoesCarousel" th:each="shoes_table_img,itemStat : ${shoes_table}"
+			    th:classappend="${itemStat.index} == 0 ? active: ''"
+			    th:attr="data-slide-to=${itemStat.index}"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item" th:each="shoes_table_img,itemStat : ${shoes_table}"
+			     th:classappend="${itemStat.index} == 0 ? active: ''">
+				<img th:src="@{${shoes_table_img.url}}"
+				     th:alt="${shoes_table_img.name}"></img>
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#shoesCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only"></span>
+		</a>
+		<a class="right carousel-control" href="#shoesCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only"></span>
+		</a>
+	</div>
+</div>
 
 
 
